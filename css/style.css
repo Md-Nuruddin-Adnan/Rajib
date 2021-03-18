@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.parent {
+  width: 750px;
+  height: 500px;
+  background: #fea100;
+  /* border-radius: 10px; */
+  margin-top: 300px;
+  position: relative;
+}
+
+.parent::before {
+  content: "";
+  width: 100px;
+  height: 100px;
+  background: #80440c;
+  position: absolute;
+  z-index: 7;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+
+  top: -100px;
+  transform: rotate(90deg);
+}
+
+
+.parent::after {
+  content: '';
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: -100px;
+  right: 0;
+  background: #fea100;
+  clip-path: polygon(0 100%, 100% 100%, 100% 0);
+  transform: rotate(-90deg);
+  z-index: -1;
+}
+
+.child-1,
+.child-2 {
+  width:200px;
+  height: 200px;
+  background: blue;
+  border-radius: 50%;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.child-1 {
+  background: red;
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -100px; 
+}
+
+.child-2  {
+  position: absolute;
+  z-index: 5;
+  bottom: -100px;
+  right: 100px;
+}
+
+.fixed-div {
+  position: fixed;
+  left: 0;
+  top: 300px;
+}
+
+
+.banner {
+  background: url('https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823__340.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  padding: 100px;
+  color: #fff;
+}
+
+.btn-info {
+  background-color: rgb(238, 3, 168);
+  border: none;
+}
