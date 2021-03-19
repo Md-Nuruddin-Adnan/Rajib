@@ -1,90 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
+  outline: none;
   box-sizing: border-box;
 }
-
-.parent {
-  width: 750px;
-  height: 500px;
-  background: #fea100;
-  /* border-radius: 10px; */
-  margin-top: 300px;
-  position: relative;
+ 
+::after, ::before {
+  box-sizing: border-box;
+}
+ 
+h1, h2, h3, h4, h5, h6, ol, ul, p, address, strong, i {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+   
+ul, li {
+  /* list-style: none; */
 }
 
-.parent::before {
-  content: "";
-  width: 100px;
-  height: 100px;
-  background: #80440c;
-  position: absolute;
-  z-index: 7;
-  clip-path: polygon(100% 0, 0 0, 100% 100%);
-
-  top: -100px;
-  transform: rotate(90deg);
+a, a:hover {
+  text-decoration: none;
 }
 
-
-.parent::after {
-  content: '';
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  bottom: -100px;
-  right: 0;
-  background: #fea100;
-  clip-path: polygon(0 100%, 100% 100%, 100% 0);
-  transform: rotate(-90deg);
-  z-index: -1;
+body {
+  background: #E4E7EE;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.child-1,
-.child-2 {
-  width:200px;
-  height: 200px;
-  background: blue;
-  border-radius: 50%;
-  text-align: center;
-  display: grid;
-  place-items: center;
+.container-fluid {
+  max-width: 90%;
+}
+/* basic css end */
+
+/* common css start */
+h1 {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+}
+h2 {
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 19px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 19px;
+}
+
+.my-btn {
+  font-size: 12px;
   color: #fff;
-  font-size: 40px;
+  font-weight: bold;
+  background: #10a2ef;
+  padding: 10px 60px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+/*// end of common css */
+
+/* main css start */
+
+/* === header section start === */
+.header {
+  background: #506C86;
+  color: #fff;
+  padding: 10px;
+}
+
+.header .logo {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 28px;
+  color: #e2e8f2;
   font-weight: bold;
 }
 
-.child-1 {
-  background: red;
-  position: absolute;
-  z-index: 6;
-  left: 50%;
-  transform: translateX(-50%);
-  top: -100px; 
+.header .main-nav .top{
+  font-size: 14px;
+  color: #fff;
+  line-height: 20px;
 }
 
-.child-2  {
-  position: absolute;
-  z-index: 5;
-  bottom: -100px;
-  right: 100px;
+.header .main-nav .top a{
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+  line-height: 20px;
 }
 
-.fixed-div {
-  position: fixed;
-  left: 0;
-  top: 300px;
+.header ul {
+  margin-right: -10px;
 }
 
+.header ul li {
+ list-style: none;
+}
 
-.banner {
-  background: url('https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823__340.jpg') no-repeat center center/cover;
-  background-attachment: fixed;
-  padding: 100px;
+.header ul li a {
+  font-size: 11px;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+.header .main-nav .top a:hover,
+.header ul li a:hover {
+  text-decoration: underline;
+}
+/* ===//end of header section === */
+
+
+/* === option-nav section start === */
+.option-nav {
+  margin: 10px 0;
+}
+
+.option-nav ul li {
+  list-style: none;
+}
+
+.option-nav ul li a {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #506C86;
+  transition: all 0.2s linear;
+}
+
+.option-nav ul li a:hover {
+  color: #d44551;
+}
+
+.option-nav .right .btn {
+  background: #E4E7EE;
+  color: rgb(112,121,149);
+  border-color: rgba(112,121,149, 0.2);
+}
+
+.option-nav .right .btn:hover {
+  background:#a6a7b5;
   color: #fff;
 }
+/* ===//end of option-nav section === */
 
-.btn-info {
-  background-color: rgb(238, 3, 168);
-  border: none;
+/* === main-content section start === */
+.main-content ol li {
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 19px;
 }
+
+.table-borderless tbody+tbody, .table-borderless td, .table-borderless th, .table-borderless thead th {
+  font-size: 11px;
+}
+
+.table th {
+  background: #DBDCE4;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background: rgb(246,247,249);
+}
+/* ===//end of main-content section === */
+
+/* === footer section start === */
+.footer {
+  background: #506C86;
+  padding: 12px 0 2px 0;
+}
+
+.footer p {
+  color: #e2e8f2;
+  font-size: 11px;
+  text-align: center;
+  line-height: 15px;
+}
+
+.footer p a {
+  color: #e2e8f2;
+  font-size: 11px;
+  text-align: center;
+}
+/* ===//end of footer section === */
+
+
+/* font-family: 'PT Sans Narrow', sans-serif; */
